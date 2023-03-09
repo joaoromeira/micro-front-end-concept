@@ -1,0 +1,24 @@
+{
+  "name": "micro-front-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build:ms": "scripts/build.sh",
+    "install:ms": "scripts/install.sh"
+  },
+  "workspaces": {
+    "packages": [
+      "apps/shared/*",
+      "apps/microservices/*"
+    ]
+  },
+  "devDependencies": {
+    "tsc": "^2.0.4",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.23"
+  }
+}
