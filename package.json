@@ -5,7 +5,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "checkout:start": "cd packages/apps/mfe-checkout && webpack-dev-server --mode development"
+    "start:mfe-checkout": "cd packages/apps/mfe-checkout && webpack-dev-server --mode development",
+    "start:lib-credit-card": "cd packages/libs/credit-card && webpack-dev-server --mode development"
   },
   "workspaces": {
     "packages": [

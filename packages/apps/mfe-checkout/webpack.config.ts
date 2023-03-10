@@ -1,3 +1,4 @@
+/* eslint-disable import-helpers/order-imports */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -27,7 +28,7 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  entry: path.resolve(__dirname, 'src', 'index.tsx'),
+  entry: path.resolve(__dirname, 'src', 'index.ts'),
   module: {
     rules: [
       {
@@ -50,23 +51,10 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: 'mfeCheckout',
-      filename: 'remoteEntry.js',
-      exposes: {
-        './Checkout': './src/index',
+      remotes: {
+        creditCard: 'creditCard@http://localhost:8082/remoteEntry.js',
       },
-      shared: {
-        ...packageJson.dependencies,
-        react: {
-          singleton: true,
-          eager: true,
-          requiredVersion: packageJson.dependencies.react,
-        },
-        'react-dom': {
-          singleton: true,
-          eager: true,
-          requiredVersion: packageJson.dependencies['react-dom'],
-        },
-      },
+      shared: packageJson.dependencies,
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public', 'index.html'),
