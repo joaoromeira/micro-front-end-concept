@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "checkout:start:dev": "cd packages/mfes/checkout && webpack-dev-server --mode development"
+    "checkout:start": "cd packages/mfes/checkout && webpack-dev-server --mode development"
   },
   "workspaces": {
     "packages": [
