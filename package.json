@@ -5,11 +5,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "checkout:start": "cd packages/mfes/checkout && webpack-dev-server --mode development"
+    "checkout:start": "cd packages/apps/mfe-checkout && webpack-dev-server --mode development"
   },
   "workspaces": {
     "packages": [
-      "packages/mfes/*",
+      "packages/apps/*",
+      "packages/libs/*",
       "packages/shared/*"
     ]
   },
