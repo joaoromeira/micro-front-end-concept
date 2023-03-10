@@ -1,3 +1,3 @@
-const config = require('@mfe/eslint');
+const config = require('@shared/eslint');
 
 module.exports = config

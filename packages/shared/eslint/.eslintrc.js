@@ -1,39 +1,38 @@
-
 module.exports = {
   env: {
-    es2021: true,
+    browser: true,
+    es2020: true,
+    node: true,
+    jest: true
   },
   extends: [
-    'airbnb-base',
+    'plugin:react/recommended',
+    'standard',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
+    'prettier/standard',
+    'prettier/react'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 12,
-    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 11,
+    sourceType: 'module'
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    camelcase: 'off',
-    'import/prefer-default-export': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
-    'class-methods-use-this': 'off',
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'ignorePackages',
-        ts: 'never',
-      },
-    ],
     'prettier/prettier': 'error',
-    'import/no-unresolved': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       typescript: {}
     },
-  },
-};
+    react: {
+      version: 'detect',
+    },
+  }
+}

@@ -5,17 +5,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build:ms": "scripts/build.sh",
-    "install:ms": "scripts/install.sh"
+    "checkout:start:dev": "cd packages/mfes/checkout && webpack-dev-server --mode development"
   },
   "workspaces": {
     "packages": [
-      "packages/shared/*",
-      "packages/microservices/*"
+      "packages/mfes/*",
+      "packages/shared/*"
     ]
   },
   "devDependencies": {
-    "@mfe/eslint": "*",
+    "@shared/eslint": "*",
     "tsc": "^2.0.4",
     "typescript": "^4.9.5"
   },
