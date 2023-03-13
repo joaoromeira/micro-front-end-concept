@@ -2,12 +2,13 @@ import React from 'react';
 
 import { createRoot } from 'react-dom/client';
 
-import { PaymentForm } from './presentation/components/payment-form';
+import { Home } from './presentation/pages/home/home';
+
 const rootElement = document.getElementById('root') as HTMLElement;
 const root = createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <PaymentForm />
+    <Home />
   </React.StrictMode>
 );

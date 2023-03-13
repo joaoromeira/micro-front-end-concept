@@ -1,9 +1,11 @@
-import { createApp } from 'vue';
+import { createApp, h } from 'vue';
 
 import CreditCard from './components/credit-card';
 
-export const mount = (el) => {
-  const app = createApp(CreditCard);
+export const mount = (el, props) => {
+  const app = createApp({
+    render: () => h(CreditCard, props),
+  });
   app.mount(el);
 };
 
